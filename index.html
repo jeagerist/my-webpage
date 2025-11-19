@@ -2,99 +2,126 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dashboard</title>
+<title>Command Panel</title>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;600&display=swap');
 
     body {
         margin: 0;
         padding: 0;
         height: 100vh;
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: radial-gradient(circle at top, #1f1f23, #0f0f11);
+        background: #0c0c10;
         font-family: 'Poppins', sans-serif;
+        color: #fff;
+    }
+
+    /* Geass sigil animation in background */
+    .geass {
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Geass.png') no-repeat center/contain;
+        opacity: 0.12;
+        filter: drop-shadow(0 0 18px #8e1d27);
+        animation: rotate 22s linear infinite;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
     }
 
     .card {
-        width: 350px;
-        padding: 30px;
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(12px);
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-        animation: fadeIn 0.7s ease;
+        width: 380px;
+        padding: 34px;
+        background: rgba(20, 20, 28, 0.65);
+        border-radius: 14px;
+        border: 1px solid rgba(120, 0, 35, 0.55);
+        box-shadow: 0 0 20px rgba(120, 0, 35, 0.4), inset 0 0 25px rgba(90, 0, 20, 0.2);
+        backdrop-filter: blur(14px);
+        animation: loadIn 0.7s ease forwards;
+        transform: translateY(20px);
+        opacity: 0;
         text-align: center;
     }
 
-    @keyframes fadeIn {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+    @keyframes loadIn {
+        to { opacity: 1; transform: translateY(0); }
     }
 
-    h1 {
-        font-size: 22px;
-        font-weight: 600;
-        margin-bottom: 15px;
-        color: #ffffff;
+    .title {
+        font-size: 23px;
+        font-family: 'Cinzel', serif;
+        color: #c22;
+        text-shadow: 0 0 12px rgba(255, 40, 40, 0.7);
+        margin-bottom: 18px;
+        letter-spacing: 1px;
     }
 
     input {
         width: 100%;
         padding: 12px;
         margin-top: 10px;
-        background: rgba(255,255,255,0.08);
-        border-radius: 8px;
-        border: none;
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 10px;
+        border: 1px solid rgba(110, 0, 25, 0.6);
         outline: none;
-        color: #fff;
-        font-size: 14px;
-        transition: 0.2s;
+        color: #f4f4f4;
+        font-size: 15px;
+        transition: 0.25s ease;
     }
 
     input:focus {
-        background: rgba(255,255,255,0.15);
-        box-shadow: 0 0 8px #5865f2;
+        background: rgba(255, 255, 255, 0.13);
+        box-shadow: 0 0 12px #c22;
+        border-color: #c22;
     }
 
     button {
         width: 100%;
-        padding: 12px;
+        padding: 13px;
         margin-top: 18px;
-        background: #5865f2;
+        background: linear-gradient(135deg, #550010, #a0001f);
         border: none;
         color: #fff;
         font-size: 16px;
-        border-radius: 8px;
+        border-radius: 10px;
         cursor: pointer;
-        transition: 0.25s;
+        transition: 0.25s ease;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 0 15px rgba(120, 0, 35, 0.45);
     }
 
     button:hover {
-        background: #6c76ff;
         transform: translateY(-2px);
-        box-shadow: 0 6px 15px rgba(88,101,242,0.4);
+        box-shadow: 0 0 25px rgba(180, 0, 40, 0.65);
+        background: linear-gradient(135deg, #770018, #c20026);
     }
 
     .footer {
-        margin-top: 12px;
-        font-size: 11px;
-        color: #b3b3b3;
+        margin-top: 14px;
+        font-size: 12px;
+        color: #888;
+        letter-spacing: 0.7px;
     }
 </style>
-
 </head>
 <body>
 
-<div class="card">
-    <h1>#1 Selfbot Hosting</h1>
+<div class="geass"></div>
 
-    <input type="text" placeholder="Enter your token here">
+<div class="card">
+    <div class="title">#1 Selfbot Hosting</div>
+
+    <input type="text" placeholder="enter your token here.">
     
-    <button>start</button>
+    <button>EXECUTE</button>
 
     <div class="footer">made by jeagerist</div>
 </div>
