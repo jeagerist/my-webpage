@@ -22,7 +22,6 @@
     /* Sakura petals */
     .sakura {
         position: absolute;
-        top: -10px;
         width: 12px;
         height: 12px;
         background: #ffb7d5;
@@ -36,7 +35,6 @@
     /* Sparkle rain */
     .spark-rain {
         position: absolute;
-        top: -10px;
         width: 6px;
         height: 6px;
         background: #ff9ac7;
@@ -134,6 +132,10 @@ for (let i = 0; i < 35; i++) {
     let petal = document.createElement('div');
     petal.classList.add('sakura');
     petal.style.left = Math.random() * 100 + "vw";
+
+    // Always start ABOVE the screen
+    petal.style.top = (-5 - Math.random() * 20) + "vh";
+
     petal.style.animationDuration = (5 + Math.random() * 4) + "s";
     document.body.appendChild(petal);
 }
@@ -145,6 +147,10 @@ for (let i = 0; i < 60; i++) {
     let spark = document.createElement('div');
     spark.classList.add('spark-rain');
     spark.style.left = Math.random() * 100 + "vw";
+
+    // Always start ABOVE the screen
+    spark.style.top = (-5 - Math.random() * 20) + "vh";
+
     spark.style.animationDuration = (3 + Math.random() * 3) + "s";
     spark.style.opacity = 0.4 + Math.random() * 0.6;
     document.body.appendChild(spark);
@@ -160,4 +166,3 @@ for (let i = 0; i < 60; i++) {
 
 </body>
 </html>
-
